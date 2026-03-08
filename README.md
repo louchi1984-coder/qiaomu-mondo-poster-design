@@ -1,6 +1,14 @@
 # mondo-poster-prompt
 
-Generate AI image prompts and create designs in Mondo's iconic screen-printed style with bold colors
+Generate AI image prompts and create designs in Mondo's iconic screen-printed style with bold colors, minimalist composition, and symbolic imagery.
+
+## 🚀 New in v2.0!
+
+✨ **20 Artist Styles** - From Saul Bass to Toulouse-Lautrec
+🤖 **AI Prompt Optimization** - Enhance while respecting your intent
+🎨 **3-Style Comparison** - Generate side-by-side options
+🖼️ **Image-to-Image** - Transform existing posters to Mondo style
+🎨 **Smart Colors** - AI suggests, you can override
 
 ## 安装
 

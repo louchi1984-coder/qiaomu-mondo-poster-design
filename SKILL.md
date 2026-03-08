@@ -216,11 +216,176 @@ For detailed format and genre-specific templates:
 - [references/book-covers.md](references/book-covers.md) - Book cover design patterns and best practices
 - [references/artist-styles.md](references/artist-styles.md) - Tyler Stout, Olly Moss, Martin Ansin, etc.
 
+## 🚀 Enhanced Features (NEW!)
+
+### 1. AI-Powered Prompt Optimization
+
+Let AI enhance your prompt while **respecting your original intent**:
+
+```bash
+python3 scripts/generate_mondo_enhanced.py "Blade Runner" movie --ai-enhance
+```
+
+**How it works:**
+- Takes your original idea
+- Adds ONE perfect symbolic element
+- Suggests complementary colors (you can override)
+- Uses negative space techniques
+- Keeps it clean and minimal
+
+**Example:**
+```bash
+# Your input: "Inception movie"
+# AI enhances to: "Spinning top floating in Mondo poster style, vertical 9:16,
+# single iconic object, negative space reveals dream layers, 2-color duotone:
+# gold and deep blue, Olly Moss minimal approach"
+```
+
+### 2. Three-Column Style Comparison
+
+Generate 3 different styles side-by-side to choose the best:
+
+```bash
+python3 scripts/generate_mondo_enhanced.py "Dune" movie --compare saul-bass,olly-moss,kilian-eng
+```
+
+**Perfect for:**
+- Exploring different artistic approaches
+- Client presentations
+- Finding the best style for your subject
+
+### 3. Image-to-Image Transformation
+
+Transform existing posters into Mondo style:
+
+```bash
+python3 scripts/generate_mondo_enhanced.py "noir thriller" movie --input original_poster.jpg --style saul-bass
+```
+
+**Use cases:**
+- Convert photographic posters to illustrated style
+- Apply Mondo aesthetic to existing designs
+- Reimagine classic posters
+
+### 4. 20 Greatest Poster Artists
+
+Now includes 20 legendary artist styles:
+
+**Belle Époque Pioneers:**
+- `jules-cheret` - Bright joyful colors, dynamic feminine figures
+- `toulouse-lautrec` - Flat blocks, Japanese influence, bold silhouettes
+- `alphonse-mucha` - Art Nouveau flowing curves, ornate floral
+- `steinlen` - Social realist, expressive lines, cat motifs
+- `eugène-grasset` - Medieval Gothic, stained glass aesthetic
+
+**Modernist Masters:**
+- `saul-bass` - Minimalist geometric abstraction, visual metaphors
+- `cassandre` - Cubist planes, dramatic perspective, Art Deco
+- `milton-glaser` - Psychedelic pop art, innovative typography
+- `josef-muller-brockmann` - Swiss grid, mathematical precision
+- `paul-rand` - Playful geometry, clever visual puns
+
+**Film Legends:**
+- `drew-struzan` - Painted realism, epic cinematic, nostalgic glow
+- `olly-moss` - Ultra-minimal negative space, hidden imagery
+- `tyler-stout` - Maximalist collages, intricate details
+- `martin-ansin` - Art Deco elegance, refined vintage
+- `laurent-durieux` - Visual puns, mysterious atmospheric
+
+**Contemporary:**
+- `kilian-eng` - Geometric futurism, precise technical lines
+- `dan-mccarthy` - Ultra-flat geometric abstraction
+- `jock` - Gritty expressive brushwork, dynamic action
+- `shepard-fairey` - Propaganda style, halftone, political
+- `jay-ryan` - Folksy handmade, warm textured simple
+- `paula-scher` - Typographic maximalism, layered text
+
+**View all styles:**
+```bash
+python3 scripts/generate_mondo_enhanced.py --list-styles
+```
+
+### 5. Smart Color Suggestions
+
+AI suggests complementary colors, but you can override:
+
+```bash
+# Let AI suggest colors
+python3 scripts/generate_mondo_enhanced.py "Jazz Festival" event --style jules-cheret
+
+# Or specify your own
+python3 scripts/generate_mondo_enhanced.py "Jazz Festival" event --style jules-cheret --colors "vibrant yellow, deep blue, red"
+```
+
+## Interactive Usage with Claude
+
+When using this skill through Claude Code, I can guide you interactively:
+
+**I'll ask you simple questions like:**
+1. "What's your subject?" (movie/book/album title)
+2. "Which style feels right?" (show 3-4 options with previews)
+3. "Any color preferences?" (or let AI suggest)
+4. "Want to see comparisons?" (generate 3 versions)
+
+This makes it easy even if you're unfamiliar with Mondo aesthetics!
+
+---
+
 ## Direct Image Generation
 
-This skill can generate actual images directly using the bundled script:
+This skill can generate actual images directly using the bundled scripts:
 
-### Quick Generate
+### Enhanced Version (Recommended)
+
+**Full feature set:** AI enhancement, comparisons, image-to-image, 20 artists
+
+```bash
+python3 scripts/generate_mondo_enhanced.py "subject" "type" [options]
+```
+
+**Enhanced Parameters:**
+- `subject`: What to design
+- `type`: Design type - "movie", "book", "album", "event"
+- `--style`: Artist style (20 options, see --list-styles)
+- `--ai-enhance`: Let AI optimize prompt (respects your intent)
+- `--compare`: Generate 3-style comparison (e.g., "saul-bass,olly-moss,jock")
+- `--input`: Input image for image-to-image transformation
+- `--colors`: Color preferences (e.g., "orange, teal, black")
+- `--aspect-ratio`: Aspect ratio (default: 9:16)
+- `--output`: Custom output path
+- `--no-generate`: Only show prompt
+
+**Enhanced Examples:**
+
+AI-optimized generation:
+```bash
+python3 scripts/generate_mondo_enhanced.py "Blade Runner" movie --ai-enhance
+```
+
+3-style comparison:
+```bash
+python3 scripts/generate_mondo_enhanced.py "Akira" movie --compare kilian-eng,saul-bass,jock
+```
+
+Image-to-image with specific artist:
+```bash
+python3 scripts/generate_mondo_enhanced.py "cyberpunk noir" movie --input poster.jpg --style saul-bass
+```
+
+With color preferences:
+```bash
+python3 scripts/generate_mondo_enhanced.py "Jazz Night" event --style milton-glaser --colors "psychedelic orange, purple, yellow"
+```
+
+List all 20 artist styles:
+```bash
+python3 scripts/generate_mondo_enhanced.py --list-styles
+```
+
+### Standard Version (Simple & Fast)
+
+**Basic usage for quick generation:**
+
 ```bash
 python3 scripts/generate_mondo.py "subject" "type" [options]
 ```
